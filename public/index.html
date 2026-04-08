@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>All-Stars Baseball IQ</title>
+  <base href="/Baseball_IQ/public/">
+  <meta name="theme-color" content="#040C18">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=133.0">
+</head>
+<body>
+
+<div id="menu-screen" class="container centered">
+  <div class="hero-section">
+    <img src="images/logo.jpg" class="logo" alt="All-Stars Logo">
+    <p class="team-name">All-Stars</p>
+    <h1 class="title">BASEBALL IQ</h1>
+    <p class="subtitle">Know the play. Make the out.</p>
+  </div>
+
+  <div class="diamond-wrap home-diamond" id="menu-diamond"></div>
+
+  <div class="ui-section">
+    <div class="input-group">
+      <label class="ui-label">PLAYER NAME</label>
+      <input type="text" class="name-input" id="player-name" placeholder="Enter name..." maxlength="20">
+    </div>
+
+    <div class="input-group">
+      <label class="ui-label">SELECT YOUR POSITION</label>
+      <div class="cat-wrap" id="position-buttons"></div>
+    </div>
+
+    <button class="start-btn" id="start-btn">PLAY BALL!</button>
+  </div>
+</div>
+
+<div id="play-screen" class="container hidden">
+  <div class="game-header">
+    <button id="quit-btn" class="home-link">← HOME</button>
+    <div id="q-counter" class="hud-text"></div>
+    <div class="score-area">
+      <span id="score-display" class="hud-score">✓ 0</span>
+    </div>
+  </div>
+  
+  <div class="progress-container">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+  
+  <div class="cat-badge" id="cat-badge">POSITION</div>
+  
+  <div class="diamond-container">
+    <div class="diamond-wrap" id="play-diamond"></div>
+  </div>
+  
+  <div class="diamond-legend">
+    <div class="legend-item"><span class="legend-line legend-hit"></span> Ball Hit</div>
+    <div class="legend-item"><span class="legend-line legend-throw"></span> Throw</div>
+    <div class="legend-item"><span class="legend-line legend-overthrow"></span> Overthrow</div>
+    <div class="legend-item"><span class="legend-dot legend-you"></span> You</div>
+    <div class="legend-item"><span class="legend-dot legend-runner"></span> Runner</div>
+  </div>
+  
+  <div class="situation-card">
+    <p id="situation-text" class="sit-desc"></p>
+    <p id="question-text" class="sit-main"></p>
+  </div>
+  
+  <div class="options" id="options-wrap"></div>
+  
+  <div class="feedback hidden" id="feedback">
+    <p id="feedback-text"></p>
+  </div>
+  
+  <div class="action-footer hidden" id="next-wrap">
+    <button class="next-btn" id="next-btn">NEXT PLAY →</button>
+  </div>
+</div>
+
+<div id="results-screen" class="container centered hidden">
+  <img src="images/logo.jpg" class="logo-small" alt="All-Stars Logo Small">
+  <h2 class="results-grade" id="results-grade">GREAT GAME!</h2>
+  
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-val" id="stat-score">0/0</span>
+      <span class="stat-lab">SCORE</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-val" id="stat-pct">0%</span>
+      <span class="stat-lab">ACCURACY</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-val" id="stat-streak">0</span>
+      <span class="stat-lab">STREAK</span>
+    </div>
+  </div>
+  
+  <div class="ui-section" style="margin-top:20px;">
+    <button class="start-btn" id="play-again-btn">TRY AGAIN</button>
+    <button class="ghost-btn" id="main-menu-btn" style="margin-top:10px;">MAIN MENU</button>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
